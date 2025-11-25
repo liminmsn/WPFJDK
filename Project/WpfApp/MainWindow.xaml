@@ -12,24 +12,22 @@
 	WindowStyle="None"
 	Background="Transparent"
 	AllowsTransparency="True"
-	Foreground="#ABE0F0"
-	Title="JDK管理"
+	Foreground="{Binding Color_Text_0}"
 	Height="450"
 	Width="800">
-	<Border x:Name="main_box" Background="#82FFEE91" CornerRadius="6" Padding="4">
+	<Border x:Name="main_box" Background="{Binding Color_0}" CornerRadius="6" Padding="4">
 		<Grid>
 			<Grid.RowDefinitions>
 				<RowDefinition Height="30"/>
 				<RowDefinition/>
 			</Grid.RowDefinitions>
 			<Border Grid.Row="0"
-			MouseLeftButtonDown="Border_MouseLeftButtonDown"
-			Padding="{Binding ElementName=main_box,Path=Padding}" 
+			MouseLeftButtonDown="Border_MouseLeftButtonDown" 
 			CornerRadius="{Binding ElementName=main_box,Path=CornerRadius}" 
-			Background="#F5C857" Cursor="Hand" >
+			Background="{Binding Color_1}" Cursor="Hand" Padding="4,0,4,0" >
 				<DockPanel Cursor="Hand" VerticalAlignment="Center">
-					<TextBlock VerticalAlignment="Center">标题</TextBlock>
-					<Button HorizontalAlignment="Right" Padding="6,2,6,2">
+					<TextBlock VerticalAlignment="Center" Text="{Binding Title}" FontWeight="Bold"/>
+					<Button HorizontalAlignment="Right" Padding="4,3,4,3" FontSize="20" FontFamily="Arial Black" Margin="0,2,0,2">
 						<ui:SymbolIcon Symbol="DismissCircle12" Foreground="Red" MouseDown="SymbolIcon_MouseDown" />
 					</Button>
 				</DockPanel>
@@ -39,7 +37,7 @@
 			Padding="{Binding ElementName=main_box,Path=Padding}"
 			CornerRadius="{Binding ElementName=main_box,Path=CornerRadius}"
 			Grid.Row="1" 
-			Background="#E2852E" 
+			Background="{Binding Color_2}" 
 			VerticalAlignment="Stretch">
 				<TextBlock>hello world</TextBlock>
 			</Border>
