@@ -28,9 +28,9 @@ namespace WpfApp
         public AppInfo()
         {
             Title = "JDK管理";
-            Color_Text_0 = "#E2852E";
-            Color_0 = "#E2852E";
-            Color_1 = "#F5C857";
+            Color_Text_0 = "#452829";
+            Color_0 = "#F5C857";
+            Color_1 = "#E2852E";
             Color_2 = "#FFEE91";
         }
     }

@@ -24,7 +24,7 @@
 			<Border Grid.Row="0"
 			MouseLeftButtonDown="Border_MouseLeftButtonDown" 
 			CornerRadius="{Binding ElementName=main_box,Path=CornerRadius}" 
-			Background="{Binding Color_1}" Cursor="Hand" Padding="4,0,4,0" >
+			Background="{Binding Color_1}" Cursor="Hand" Padding="4,0,2,0" >
 				<DockPanel Cursor="Hand" VerticalAlignment="Center">
 					<TextBlock VerticalAlignment="Center" Text="{Binding Title}" FontWeight="Bold"/>
 					<Button HorizontalAlignment="Right" Padding="4,3,4,3" FontSize="20" FontFamily="Arial Black" Margin="0,2,0,2">
@@ -34,7 +34,7 @@
 			</Border>
 			<Border
 			Margin="0,4,0,0"
-			Padding="{Binding ElementName=main_box,Path=Padding}"
+			Padding="4"
 			CornerRadius="{Binding ElementName=main_box,Path=CornerRadius}"
 			Grid.Row="1" 
 			Background="{Binding Color_2}" 
