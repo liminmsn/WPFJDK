@@ -7,11 +7,21 @@
 		mc:Ignorable="d"
 		WindowStartupLocation="CenterScreen"
 		WindowStyle="None"
+		Background="Transparent"
+		AllowsTransparency="True"
+		Foreground="#67B2D8"
 		Title="MainWindow" Height="450" Width="800">
-	<Grid>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition/>
-			<ColumnDefinition/>
-		</Grid.ColumnDefinitions>
-	</Grid>
+	<Border Background="#5A0E24" CornerRadius="6" Padding="6">
+		<StackPanel VerticalAlignment="Stretch">
+			<Border Grid.Row="0" VerticalAlignment="Top" Padding="6" CornerRadius="6" Background="#76153C" >
+				<DockPanel>
+					<TextBlock>标题</TextBlock>
+					<Button HorizontalAlignment="Right">按钮</Button>
+				</DockPanel>
+			</Border>
+			<Border Grid.Row="1" Background="#BF124D" VerticalAlignment="Stretch">
+				<TextBlock>hello world</TextBlock>
+			</Border>
+		</StackPanel>
+	</Border>
 </Window>
