@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Project/Library/Library.csproj" Id="f6ab7d89-8800-4c39-9f2d-474ae93e2ea4" />
+  <Project Path="Project/WpfApp/WpfApp.csproj" Id="576594c0-5062-4722-94a6-0359f337f5d7" />
+  <Project Path="WPFJDK.shproj" />
+</Solution>
