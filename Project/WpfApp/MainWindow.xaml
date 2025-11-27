@@ -15,6 +15,10 @@
 	Foreground="{Binding Color_Text_0}"
 	Height="450"
 	Width="800">
+	<Window.Resources>
+		
+	</Window.Resources>
+	
 	<Border x:Name="main_box" Background="{Binding Color_0}" CornerRadius="6" Padding="4">
 		<Grid>
 			<Grid.RowDefinitions>
@@ -23,8 +27,8 @@
 			</Grid.RowDefinitions>
 			<Border Grid.Row="0"
 			MouseLeftButtonDown="Border_MouseLeftButtonDown" 
-			CornerRadius="{Binding ElementName=main_box,Path=CornerRadius}" 
-			Background="{Binding Color_1}" Cursor="Hand" Padding="4,0,2,0" >
+			CornerRadius="{Binding ElementName=main_box,Path=CornerRadius}"
+			Background="Transparent" Cursor="Hand" Padding="4,0,0,0">
 				<DockPanel Cursor="Hand" VerticalAlignment="Center">
 					<TextBlock VerticalAlignment="Center" Text="{Binding Title}" FontWeight="Bold"/>
 					<Button HorizontalAlignment="Right" Padding="4,3,4,3" FontSize="20" FontFamily="Arial Black" Margin="0,2,0,2">
@@ -32,15 +36,39 @@
 					</Button>
 				</DockPanel>
 			</Border>
-			<Border
-			Margin="0,4,0,0"
-			Padding="4"
-			CornerRadius="{Binding ElementName=main_box,Path=CornerRadius}"
-			Grid.Row="1" 
-			Background="{Binding Color_2}" 
-			VerticalAlignment="Stretch">
-				<TextBlock>hello world</TextBlock>
-			</Border>
+			<DockPanel Grid.Row="1">
+				<Border
+				Background="{Binding Color_1}"
+				CornerRadius="{Binding ElementName=main_box, Path=CornerRadius}">
+					<DockPanel HorizontalAlignment="Stretch">
+						<ListView ItemsSource="{Binding PageManages}" Background="Transparent" BorderThickness="0" d:ItemsSource="{d:SampleData ItemCount=5}">
+							<ListView.ItemContainerStyle>
+								<Style TargetType="ListBoxItem">
+									<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+									<Setter Property="Padding" Value="0"/>
+									<Setter Property="Margin" Value="0"/>
+								</Style>
+							</ListView.ItemContainerStyle>
+							<ListView.ItemTemplate>
+								<DataTemplate>
+									<Button Tag="{Binding Page}" Click="Button_Click" HorizontalAlignment="Stretch">
+										<Button.Content>
+											<DockPanel>
+												<ui:SymbolIcon Symbol="{Binding Icon}"/>
+												<TextBlock Margin="4,0,0,0" Text="{Binding Label_}"/>
+											</DockPanel>
+										</Button.Content>
+									</Button>
+								</DataTemplate>
+							</ListView.ItemTemplate>
+						</ListView>
+						<Separator/>
+						<Border Padding="2">
+							<Frame x:Name="frame" />
+						</Border>
+					</DockPanel>
+				</Border>
+			</DockPanel>
 		</Grid>
 	</Border>
 </Window>
