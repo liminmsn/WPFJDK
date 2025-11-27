@@ -47,8 +47,8 @@ namespace WpfApp
             Title = "JDK管理";
             Color_Text_0 = "#161823";
             Color_0 = "#f0a1afc9";
-            Color_1 = "#4b5cc4";
-            Color_2 = "#3b2e7e";
+            Color_1 = "#3b2e7e";
+            Color_2 = "#4b5cc4";
             PageManages = new List<PagesManage>() {
                 new PagesManage()
                 {

@@ -13,12 +13,9 @@
 	Background="Transparent"
 	AllowsTransparency="True"
 	Foreground="{Binding Color_Text_0}"
+	x:Name="MainWin"
 	Height="450"
 	Width="800">
-	<Window.Resources>
-		
-	</Window.Resources>
-	
 	<Border x:Name="main_box" Background="{Binding Color_0}" CornerRadius="6" Padding="4">
 		<Grid>
 			<Grid.RowDefinitions>
@@ -38,7 +35,7 @@
 			</Border>
 			<DockPanel Grid.Row="1">
 				<Border
-				Background="{Binding Color_1}"
+				Background="{Binding Color_2}"
 				CornerRadius="{Binding ElementName=main_box, Path=CornerRadius}">
 					<DockPanel HorizontalAlignment="Stretch">
 						<ListView ItemsSource="{Binding PageManages}" Background="Transparent" BorderThickness="0" d:ItemsSource="{d:SampleData ItemCount=5}">
@@ -51,7 +48,7 @@
 							</ListView.ItemContainerStyle>
 							<ListView.ItemTemplate>
 								<DataTemplate>
-									<Button Tag="{Binding Page}" Click="Button_Click" HorizontalAlignment="Stretch">
+									<Button HorizontalAlignment="Stretch" Tag="{Binding Page}" Click="Button_Click">
 										<Button.Content>
 											<DockPanel>
 												<ui:SymbolIcon Symbol="{Binding Icon}"/>
