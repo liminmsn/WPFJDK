@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Library;
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace JDKManage.Views
 {
@@ -21,8 +11,25 @@ namespace JDKManage.Views
     public partial class PageInfo : Page
     {
         public PageInfo()
-        {
+        { 
             InitializeComponent();
+            exec.Text = Init("java --version");
+            exec_.Text = Init("where java");
+        }
+        string Init(string comm)
+        {
+            var command = new Command(CommandType.CMD);
+            var a = command.Send(comm);
+            var val = a.ExitCode == 0 ? a.Out : a.Err;
+            return val;
+            //exec.Text = $"{val}";
+            //MessageBox.Show(val);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            exec.Text = Init("javaa --version");
+            exec_.Text = Init("where javaa");
         }
     }
 }
